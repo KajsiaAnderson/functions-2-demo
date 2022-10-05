@@ -373,4 +373,8 @@ const expenses = [
     }
 ]
 
-// const remaining // = expenses.reduce(//callback, //initial value)
+
+const remaining = expenses.reduce((acc, cur) => {
+    return acc - cur.amount
+}, budget)
+console.log(remaining)
