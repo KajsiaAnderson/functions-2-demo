@@ -251,7 +251,7 @@ console.log(copyArrAndChange(lotr, copyStrToCamelCase))
 
 
 // CODE HERE
-
+console.log("---------------")
 
 ////////////////////////////////////////
 ////// HIGHER ORDER ARRAY METHODS //////
@@ -267,7 +267,9 @@ console.log(copyArrAndChange(lotr, copyStrToCamelCase))
 
 const colors = ['red', 'blue', 'yellow', 'green', 'orange']
 
-// const mappedColors // = colors.map()
+let mappedColors = [];
+mappedColors = colors.map(item => item = "pink");
+console.log(mappedColors)
 
 /*
     Edit the formalGreeting function and use the built in .map method 
@@ -280,8 +282,11 @@ const colors = ['red', 'blue', 'yellow', 'green', 'orange']
 const formalNames = ['Bernard', 'Elizabeth', 'Conrad', 'Mary Margaret']
 
 const formalGreeting = names => {
-    // CODE HERE
-}
+    let formalGreetingsArr = names.map(item => "Hello, " + item);
+    return formalGreetingsArr;  
+};
+
+console.log(formalGreeting(formalNames));
 
 // Call formalGreeting passing in the formalNames array
 
@@ -295,8 +300,9 @@ const formalGreeting = names => {
 
 const places = ['Binghampton', 'Albany', 'New York', 'Ithaca', 'Auburn', 'Rochester', 'Buffalo']
 
-// const placesThatStartWithA // = places.filter()
+const placesThatStartWithA = places.filter(city => city.startsWith('A'))
 
+console.log(placesThatStartWithA)
 
 /*
     Create a function called identifier that uses the filter higher order 
@@ -321,9 +327,16 @@ let jobs = [
 // Do not edit the code above.
 
 // CODE HERE
+const identifer = () => {};
+const identifier = (jobsArr) => {
+let identified = {};
+identified = jobs.filter(position => position.programmer)[0];
+return identified
+}
+
 
 // call the function passing in the jobs array
-
+console.log(identifier(jobs))
 
 //// REDUCE ////
 
@@ -338,10 +351,11 @@ let jobs = [
 const numsToReduce = [43, 7, 24, 79, 290]
 
 const productOfArray = numbers => {
-    // Code here
+    let reduced = numbers.reduce((a,c) => a + c)
+    return reduced
 }
 
-// CODE HERE
+console.log(productOfArray(numsToReduce))
 
 
 // call productOfArray passing in numsToReduce
